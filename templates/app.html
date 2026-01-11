@@ -1,0 +1,483 @@
+{% extends "layout.html" %}
+
+{% block navbar %}
+<header class="absolute w-full top-0 z-50 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="flex justify-between items-center h-24 relative">
+            <!-- Back Button (Replaces Logo) -->
+            <a href="/"
+                class="flex items-center gap-3 text-slate-600 hover:text-brand-blue transition-all group glass px-5 py-2.5 rounded-full">
+                <div
+                    class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform text-brand-blue">
+                    <i class="fas fa-chevron-left text-sm"></i>
+                </div>
+                <span class="font-semibold text-sm tracking-wide">Return Home</span>
+            </a>
+
+            <!-- Centered App Logo -->
+            <div
+                class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none hidden md:block">
+                <h1 class="font-bold text-2xl tracking-tighter flex items-baseline gap-0.5 font-['Poppins'] opacity-90">
+                    <span class="text-slate-900">Hire</span>
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-violet-600 relative">
+                        Sc<i
+                            class="fa-regular fa-circle-dot text-[0.75em] mx-[1px] relative -top-[1px] text-blue-600"></i>pe
+                    </span>
+                    <span class="text-slate-400 font-medium text-lg text-opacity-80">.AI</span>
+                </h1>
+            </div>
+
+            <!-- Status Badge (Replaces Get Started) -->
+            <div
+                class="hidden md:flex items-center gap-2 px-4 py-2 bg-white/50 backdrop-blur-md rounded-full border border-white/50 shadow-sm">
+                <span class="relative flex h-2.5 w-2.5">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                </span>
+                <span class="text-xs font-bold text-slate-600 uppercase tracking-wider">System Online</span>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<div class="min-h-screen py-10 lg:py-20 relative px-4 pt-32 overflow-hidden">
+
+    <!-- Floating Decor Elements (Behind Glass) -->
+    <!-- Floating Decor Elements (Behind Glass) -->
+    <div class="absolute top-28 left-4 lg:left-8 z-0 pointer-events-none hidden lg:block scale-90 opacity-100">
+        <!-- Tilted Mock Resume Card -->
+        <div
+            class="relative w-72 bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] p-5 transform -rotate-12 border border-slate-100/50">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-blue-600 to-violet-600 rounded-xl p-4 mb-5 text-white shadow-md">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center font-bold border border-white/10">
+                        AM</div>
+                    <div>
+                        <div class="font-bold text-base">Alex Morgan</div>
+                        <div class="text-[10px] opacity-90 tracking-wider">SENIOR PRODUCT DESIGNER</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Body -->
+            <div class="space-y-4">
+                <div class="h-3 w-1/3 bg-slate-100 rounded-full"></div>
+                <div class="space-y-2">
+                    <div class="h-2 w-full bg-slate-50 rounded-full"></div>
+                    <div class="h-2 w-5/6 bg-slate-50 rounded-full"></div>
+                    <div class="h-2 w-4/6 bg-slate-50 rounded-full"></div>
+                </div>
+                <div class="h-3 w-1/3 bg-slate-100 rounded-full mt-6"></div>
+                <div class="flex gap-2">
+                    <div class="h-2 w-12 bg-blue-100 rounded-full"></div>
+                    <div class="h-2 w-16 bg-purple-100 rounded-full"></div>
+                    <div class="h-2 w-8 bg-cyan-100 rounded-full"></div>
+                </div>
+            </div>
+
+            <!-- Floating Badge -->
+            <div class="absolute -right-6 top-1/2 bg-white p-3 rounded-2xl shadow-xl animate-bounce delay-1000">
+                <i class="fab fa-google text-2xl text-red-500"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute top-32 right-4 lg:right-8 z-0 pointer-events-none hidden lg:block">
+        <!-- Floating Icons -->
+        <div
+            class="absolute top-0 right-10 w-20 h-20 bg-white rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-slate-50/50 flex items-center justify-center animate-[bounce_3s_infinite] delay-0">
+            <i class="fab fa-python text-4xl text-yellow-500 drop-shadow-sm"></i>
+        </div>
+        <div
+            class="absolute top-48 -right-4 w-16 h-16 bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-slate-50/50 flex items-center justify-center animate-[bounce_4s_infinite] delay-1000">
+            <i class="fab fa-aws text-3xl text-orange-500 drop-shadow-sm"></i>
+        </div>
+        <div
+            class="absolute top-80 right-24 w-14 h-14 bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-slate-50/50 flex items-center justify-center animate-[bounce_5s_infinite] delay-500">
+            <i class="fab fa-figma text-2xl text-purple-500 drop-shadow-sm"></i>
+        </div>
+    </div>
+
+    <!-- Main Application Container -->
+    <div class="max-w-6xl mx-auto bg-white/70 backdrop-blur-xl rounded-3xl border border-white/60 shadow-2xl overflow-hidden min-h-[600px] transition-all duration-700 relative z-10"
+        id="app-container">
+
+        <!-- Input State -->
+        <div id="input-section" class="p-8 md:p-16 transition-all duration-500 opacity-100 transform translate-y-0">
+            <div class="text-center mb-12">
+                <div class="inline-block p-3 rounded-2xl bg-blue-50 text-brand-blue mb-4 shadow-sm">
+                    <i class="fas fa-magic text-2xl"></i>
+                </div>
+                <h1 class="text-4xl font-bold text-slate-900 mb-4 tracking-tight">Resume Intelligence Audit</h1>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                    Upload your resume and the target job description to generate a comprehensive gap analysis.
+                </p>
+            </div>
+
+            <form id="analyze-form" class="space-y-10 max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-10">
+                    <!-- Dropzone -->
+                    <div id="drop-zone"
+                        class="relative group border-2 border-dashed border-blue-200 rounded-3xl p-10 flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-500 hover:border-brand-blue hover:shadow-xl hover:shadow-blue-100/50 bg-gradient-to-b from-white to-blue-50/30 h-80 overflow-hidden">
+
+                        <input type="file" id="resume-upload" name="resume" accept="application/pdf"
+                            class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20" required>
+
+                        <!-- Background Decor -->
+                        <div
+                            class="absolute inset-0 bg-[radial-gradient(#e0f2fe_1px,transparent_1px)] [background-size:16px_16px] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-white/40 group-hover:bg-transparent transition-colors duration-500">
+                        </div>
+
+                        <div
+                            class="z-10 relative transform transition-transform duration-500 group-hover:scale-105 pointer-events-none">
+                            <!-- Icon Stack -->
+                            <div class="relative w-20 h-20 mx-auto mb-6">
+                                <div
+                                    class="absolute inset-0 bg-blue-100 rounded-2xl animate-ping opacity-20 group-hover:opacity-40">
+                                </div>
+                                <div
+                                    class="relative w-full h-full bg-white rounded-2xl shadow-lg border border-blue-100 flex items-center justify-center text-brand-blue group-hover:text-blue-600 group-hover:rotate-3 transition-all duration-300">
+                                    <i class="fas fa-file-pdf text-4xl drop-shadow-sm"></i>
+
+                                    <!-- Floating Badge -->
+                                    <div
+                                        class="absolute -top-2 -right-2 bg-green-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm border-2 border-white">
+                                        PDF
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3 class="text-xl font-bold text-slate-800 mb-2 group-hover:text-brand-blue transition-colors"
+                                id="file-label">Upload Resume PDF</h3>
+                            <p class="text-slate-500 text-sm font-medium mb-4 group-hover:text-slate-600">Drag & Drop or
+                                Click to Browse</p>
+
+                            <div
+                                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50/50 text-blue-600 text-xs font-semibold group-hover:bg-blue-100 transition-colors">
+                                <i class="fas fa-shield-alt"></i> Secure Scan
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job Description -->
+                    <div class="flex flex-col h-80">
+                        <label for="jd"
+                            class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 ml-1">Target
+                            Job
+                            Description</label>
+                        <div class="relative flex-grow">
+                            <div class="absolute top-4 left-4 text-slate-300">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <textarea id="jd" name="job_description"
+                                class="w-full h-full px-12 py-6 rounded-3xl border border-slate-200 focus:border-brand-purple focus:ring-4 focus:ring-purple-50 outline-none transition-all resize-none text-slate-700 bg-white/80 shadow-sm text-base leading-relaxed placeholder-slate-400"
+                                placeholder="Paste the full job description here (responsibilities, requirements, etc.)..."
+                                required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="flex justify-center pt-8">
+                    <button type="submit"
+                        class="group relative btn-shimmer text-white px-20 py-5 rounded-full font-bold text-xl shadow-xl hover:shadow-cyan-500/30 hover:-translate-y-1 transition-all overflow-hidden bg-slate-900">
+                        <span class="relative z-10 flex items-center gap-3">
+                            Start Analysis <i
+                                class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loading-state"
+            class="hidden absolute inset-0 bg-white/90 backdrop-blur-md z-20 flex flex-col items-center justify-center">
+            <div class="w-full max-w-md text-center">
+                <!-- Advanced Loader -->
+                <div class="relative w-24 h-24 mx-auto mb-8">
+                    <div class="absolute inset-0 border-4 border-slate-100 rounded-full"></div>
+                    <div
+                        class="absolute inset-0 border-4 border-brand-blue rounded-full border-t-transparent animate-spin">
+                    </div>
+                    <div class="absolute inset-4 bg-brand-blue rounded-full animate-pulse opacity-20"></div>
+                </div>
+
+                <h2 id="loading-text"
+                    class="text-2xl font-bold text-slate-900 mb-2 transition-all duration-300 tracking-tight">
+                    Initializing AI...</h2>
+                <div class="w-64 h-1 bg-slate-100 rounded-full mx-auto mt-8 overflow-hidden">
+                    <div id="loading-bar"
+                        class="h-full bg-gradient-to-r from-brand-blue to-purple-600 w-0 transition-all duration-300 ease-out">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Dashboard -->
+        <div id="results-dashboard" class="hidden p-8 md:p-12 opacity-0">
+            <!-- Header -->
+            <div
+                class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 border-b border-gray-100 pb-8">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900">Analysis Report</h2>
+                    <p class="text-slate-500 mt-1">Generated by AI</p>
+                </div>
+                <button onclick="location.reload()"
+                    class="mt-4 md:mt-0 px-6 py-2 bg-slate-100 text-slate-600 rounded-full hover:bg-slate-200 font-medium transition-colors text-sm">
+                    <i class="fas fa-redo mr-2"></i> New Scan
+                </button>
+            </div>
+
+            <!-- Executive Summary -->
+            <div
+                class="glass bg-blue-50/30 p-8 rounded-2xl mb-12 border-l-4 border-brand-blue result-item translate-y-4 shadow-sm">
+                <h3 class="text-sm font-bold text-brand-blue uppercase tracking-widest mb-3">Executive Summary</h3>
+                <p id="summary-text" class="text-lg text-slate-700 leading-relaxed font-medium"></p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                <!-- Scores Column -->
+                <div class="lg:col-span-4 space-y-8">
+                    <!-- ATS Score Card -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-soft border border-gray-100 text-center result-item translate-y-4 group hover:shadow-lg transition-all">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="font-bold text-slate-900">ATS Match</h3>
+                            <i class="fas fa-robot text-slate-300 group-hover:text-brand-blue transition-colors"></i>
+                        </div>
+                        <div class="relative w-48 h-48 mx-auto">
+                            <svg class="w-full h-full transform -rotate-90">
+                                <circle cx="96" cy="96" r="80" stroke="#f1f5f9" stroke-width="12" fill="none" />
+                                <circle id="ats-circle" cx="96" cy="96" r="80" stroke="#2563eb" stroke-width="12"
+                                    fill="none" stroke-dasharray="502" stroke-dashoffset="502" stroke-linecap="round"
+                                    class="transition-all duration-1000 ease-out shadow-glow" />
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center flex-col">
+                                <span id="ats-score" class="text-5xl font-bold text-slate-900 tracking-tighter">0</span>
+                                <span class="text-sm text-slate-400 font-medium mt-1">/ 100</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Score Card -->
+                    <div class="bg-white p-8 rounded-2xl shadow-soft border border-gray-100 text-center result-item translate-y-4 group hover:shadow-lg transition-all"
+                        style="transition-delay: 100ms;">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="font-bold text-slate-900">Content Impact</h3>
+                            <i
+                                class="fas fa-pen-nib text-slate-300 group-hover:text-brand-purple transition-colors"></i>
+                        </div>
+                        <div class="relative w-48 h-48 mx-auto">
+                            <svg class="w-full h-full transform -rotate-90">
+                                <circle cx="96" cy="96" r="80" stroke="#f1f5f9" stroke-width="12" fill="none" />
+                                <circle id="content-circle" cx="96" cy="96" r="80" stroke="#7c3aed" stroke-width="12"
+                                    fill="none" stroke-dasharray="502" stroke-dashoffset="502" stroke-linecap="round"
+                                    class="transition-all duration-1000 ease-out" />
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center flex-col">
+                                <span id="content-score"
+                                    class="text-5xl font-bold text-slate-900 tracking-tighter">0</span>
+                                <span class="text-sm text-slate-400 font-medium mt-1">/ 100</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Items Column -->
+                <div class="lg:col-span-8">
+                    <div class="bg-white p-10 rounded-2xl shadow-soft border border-gray-100 h-full result-item translate-y-4"
+                        style="transition-delay: 200ms;">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                            <span
+                                class="w-8 h-8 rounded-lg bg-red-100 text-red-500 flex items-center justify-center text-sm"><i
+                                    class="fas fa-bolt"></i></span>
+                            Critical Improvements
+                        </h3>
+                        <div id="issues-list" class="space-y-4">
+                            <!-- Dynamic Content -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const form = document.getElementById('analyze-form');
+    const fileInput = document.getElementById('resume-upload');
+    const fileLabel = document.getElementById('file-label');
+    const dropZone = document.getElementById('drop-zone');
+    const appContainer = document.getElementById('app-container');
+
+    // UI: File Input Change
+    fileInput.addEventListener('change', (e) => {
+        if (e.target.files.length > 0) {
+            fileLabel.textContent = e.target.files[0].name;
+            dropZone.classList.add('bg-blue-50/80', 'border-brand-blue');
+            // Add icon change for visual feedback
+            dropZone.querySelector('i').classList.remove('fa-cloud-upload-alt');
+            dropZone.querySelector('i').classList.add('fa-check-circle');
+        }
+    });
+
+    // UI: Drag & Drop
+    dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('border-brand-blue', 'bg-blue-50/80', 'scale-[1.02]');
+    });
+
+    dropZone.addEventListener('dragleave', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('border-brand-blue', 'bg-blue-50/80', 'scale-[1.02]');
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('border-brand-blue', 'bg-blue-50/80', 'scale-[1.02]');
+        if (e.dataTransfer.files.length > 0) {
+            fileInput.files = e.dataTransfer.files;
+            fileLabel.textContent = e.dataTransfer.files[0].name;
+            dropZone.classList.add('bg-blue-50/80', 'border-brand-blue');
+            dropZone.querySelector('i').classList.remove('fa-cloud-upload-alt');
+            dropZone.querySelector('i').classList.add('fa-check-circle');
+        }
+    });
+
+    // Logic: Form Submission
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        // Transition: Fade out input, Fade in Loader
+        document.getElementById('input-section').style.opacity = '0';
+        setTimeout(() => {
+            document.getElementById('input-section').classList.add('hidden');
+            document.getElementById('loading-state').classList.remove('hidden');
+        }, 500);
+
+        // Loading Animation Logic
+        const loadingBar = document.getElementById('loading-bar');
+        const loadingText = document.getElementById('loading-text');
+
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += Math.random() * 8;
+            if (progress > 95) progress = 95;
+            loadingBar.style.width = `${progress}%`;
+
+            if (progress > 20 && progress < 50) loadingText.innerText = "Parsing PDF Structure...";
+            if (progress > 50 && progress < 75) loadingText.innerText = "Matching Keywords...";
+            if (progress > 75 && progress < 90) loadingText.innerText = "Analyzing Content Impact...";
+            if (progress > 90) loadingText.innerText = "Finalizing Report...";
+        }, 400);
+
+        try {
+            const response = await fetch('/analyze', {
+                method: 'POST',
+                body: formData
+            });
+
+            clearInterval(interval);
+            loadingBar.style.width = '100%';
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error || 'Something went wrong');
+            }
+
+            // Small delay to show 100% bar
+            setTimeout(() => {
+                renderResults(data);
+            }, 600);
+
+        } catch (error) {
+            alert(error.message);
+            location.reload();
+        }
+    });
+
+    function renderResults(data) {
+        document.getElementById('loading-state').classList.add('hidden');
+        const dashboard = document.getElementById('results-dashboard');
+        dashboard.classList.remove('hidden');
+
+        // Force reflow
+        void dashboard.offsetWidth;
+
+        gsap.to(dashboard, { opacity: 1, duration: 0.5 });
+
+        // Populate Text
+        document.getElementById('summary-text').textContent = data.summary_feedback;
+
+        // Populate Issues with animation
+        const issuesContainer = document.getElementById('issues-list');
+        issuesContainer.innerHTML = '';
+        data.issues_list.forEach((issue, index) => {
+            const div = document.createElement('div');
+            div.className = "flex items-start gap-4 p-5 rounded-xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-md transition-all duration-300";
+            div.innerHTML = `
+                <div class="flex-shrink-0 mt-1">
+                    <i class="fas fa-exclamation-circle text-red-500 text-lg"></i>
+                </div>
+                <p class="text-slate-700 font-medium leading-relaxed">${issue}</p>
+            `;
+            issuesContainer.appendChild(div);
+        });
+
+        // Staggered Entry Animation
+        gsap.to(".result-item", {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: "power2.out"
+        });
+
+        // Score Animation
+        animateScore('ats-circle', 'ats-score', data.ats_score);
+        animateScore('content-circle', 'content-score', data.content_score);
+    }
+
+    function animateScore(circleId, textId, score) {
+        const circle = document.getElementById(circleId);
+        const text = document.getElementById(textId);
+
+        // SVG Circle Logic (r=80 => C=~502)
+        const circumference = 502;
+        const offset = circumference - (score / 100) * circumference;
+
+        // Reset
+        circle.style.strokeDashoffset = circumference;
+
+        // Animate Stroke
+        setTimeout(() => {
+            circle.style.strokeDashoffset = offset;
+        }, 500);
+
+        // Animate Number
+        let currentScore = 0;
+        gsap.to({ val: 0 }, {
+            val: score,
+            duration: 2,
+            ease: "power2.out",
+            onUpdate: function () {
+                text.textContent = Math.round(this.targets()[0].val);
+            }
+        });
+    }
+</script>
+{% endblock %}

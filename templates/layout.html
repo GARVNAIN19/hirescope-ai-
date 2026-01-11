@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireScope.AI - Career Intelligence</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins (More modern/geometric) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#2563eb', // Royal Blue
+                            dark: '#0f172a', // Slate 900
+                            purple: '#7c3aed', // Deep Purple
+                            cyan: '#06b6d4', // Cyan
+                        }
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+                        'glow': '0 0 20px rgba(37, 99, 235, 0.5)',
+                        'card': '0 10px 40px -10px rgba(0,0,0,0.1)'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '200% 0' },
+                            '100%': { backgroundPosition: '-200% 0' }
+                        },
+                        scan: {
+                            '0%': { top: '0%', opacity: '0' },
+                            '10%': { opacity: '1' },
+                            '90%': { opacity: '1' },
+                            '100%': { top: '100%', opacity: '0' }
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s linear infinite',
+                        'scan': 'scan 3s cubic-bezier(0.4, 0, 0.2, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #0f172a;
+            overflow-x: hidden;
+            background-color: #f8fafc;
+        }
+
+        /* 2. Alive Backgrounds (Gradient Mesh) */
+        .gradient - bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z - index: -50;
+            background: #ffffff;
+            overflow: hidden;
+        }
+
+        .blob {
+            position: absolute;
+            border - radius: 50 %;
+            filter: blur(80px);
+            opacity: 0.5;
+            animation: moveBlobs 20s infinite alternate;
+        }
+
+        .blob - 1 {
+            top: -10 %;
+            left: -10 %;
+            width: 60vw;
+            height: 60vw;
+            background: #e0e7ff;
+            animation - delay: 0s;
+        }
+
+        /* Light Blue */
+        .blob - 2 {
+            bottom: -10 %;
+            right: -10 %;
+            width: 50vw;
+            height: 50vw;
+            background: #ede9fe;
+            animation - delay: -5s;
+        }
+
+        /* Light Purple */
+        .blob - 3 {
+            top: 40 %;
+            left: 30 %;
+            width: 40vw;
+            height: 40vw;
+            background: #cffafe;
+            animation - delay: -10s;
+        }
+
+        /* Light Cyan */
+
+        @keyframes moveBlobs {
+            0 % {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33 % {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+
+            66 % {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+
+            100 % {
+                transform: translate(10px, -10px) scale(1);
+            }
+        }
+
+        .gradient - text {
+            background: linear - gradient(135deg, #2563eb 0 %, #7c3aed 100 %);
+            -webkit - background - clip: text;
+            background - clip: text;
+            -webkit - text - fill - color: transparent;
+        }
+
+        /* Glassmorphism Utilities */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop - filter: blur(12px);
+            -webkit - backdrop - filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-shimmer {
+            background: linear-gradient(110deg, #0f172a 8%, #334155 18%, #0f172a 33%);
+            background-size: 200% 100%;
+            animation: shimmer 4s linear infinite;
+            color: #ffffff !important;
+            position: relative;
+            z-index: 50;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <!-- Alive Background -->
+    <div class="gradient-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    {% block navbar %}
+    <!-- Header (Strict Cleanup) -->
+    <header
+        class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/50 shadow-sm transition-all duration-300"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo (HireScope.AI) -->
+                <div class="flex-shrink-0 cursor-pointer" onclick="window.location.href='/'">
+                    <h1 class="font-bold text-2xl tracking-tighter flex items-baseline gap-0.5 font-['Poppins']">
+                        <span class="text-slate-900">Hire</span>
+                        <span
+                            class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-violet-600 relative">
+                            Sc<i
+                                class="fa-regular fa-circle-dot text-[0.75em] mx-[1px] relative -top-[1px] text-blue-600"></i>pe
+                        </span>
+                        <span class="text-slate-400 font-medium text-lg text-opacity-80">.AI</span>
+                    </h1>
+                </div>
+
+                <!-- Navbar Buttons (Only Get Started) -->
+                <div class="flex items-center space-x-4">
+                    <a href="/app"
+                        class="btn-shimmer text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-cyan-500/50 transform hover:-translate-y-1">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% endblock %}
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-24">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Professional SaaS Footer (Dark Mode) -->
+    <footer class="w-full mt-auto bg-slate-900 border-t border-slate-800 py-12 z-10 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Row 1: Main Info -->
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <!-- Left: Social Icons -->
+                <div class="flex space-x-6">
+                    <a href="https://github.com/GARVNAIN19" target="_blank"
+                        class="text-white hover:text-blue-400 transition-colors text-xl">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/garv-nain-765854317" target="_blank"
+                        class="text-white hover:text-blue-400 transition-colors text-xl">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+
+                <!-- Right: Branding -->
+                <div class="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-sm">
+                    <p class="text-slate-300 font-medium">
+                        Built with 🧠 & ☕ by
+                        <a href="https://www.linkedin.com/in/garv-nain-765854317" target="_blank"
+                            class="font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-blue-500 hover:to-cyan-400 transition-all">Garv
+                            Nain</a>.
+                    </p>
+                    <p class="text-slate-500">&copy; 2026. All rights reserved.</p>
+                </div>
+            </div>
+
+            <!-- Row 2: Legal Text -->
+            <div class="mt-8 pt-8 border-t border-slate-800 text-center md:text-right">
+                <p class="text-[10px] text-slate-500">
+                    This site is protected by reCAPTCHA and the Google
+                    <a href="#" class="hover:text-slate-300 underline decoration-slate-700">Privacy Policy</a> and
+                    <a href="#" class="hover:text-slate-300 underline decoration-slate-700">Terms of Service</a> apply.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+    </script>
+    {% block scripts %}{% endblock %}
+</body>
+
+</html>
