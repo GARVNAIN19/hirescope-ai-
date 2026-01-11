@@ -14,7 +14,9 @@
 
 ## 📸 Screenshots
 
-*(Add screenshots of your Landing Page and Analysis Dashboard here)*
+
+<img width="1350" height="597" alt="Screenshot 2026-01-11 215643" src="https://github.com/user-attachments/assets/7387bd10-120d-4c1d-bb5c-f467de5ff386" />
+
 
 ---
 
